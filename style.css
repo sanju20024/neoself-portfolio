@@ -1,85 +1,90 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
-  background: url('https://wallpaperaccess.com/full/5651983.gif') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #141e30, #243b55);
   color: white;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+.background-blur {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.04;
+  z-index: -2;
 }
 
 .glass {
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-  margin: 20px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  margin: 2rem 0;
+  transition: all 0.3s ease;
 }
 
-header.glass-header {
-  text-align: center;
-  padding: 30px;
-  font-size: 2rem;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0.5);
+.glass:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-.content {
-  max-width: 900px;
-  margin: auto;
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.button {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px 10px 0 0;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  border: none;
-  border-radius: 8px;
+header .btns a {
+  margin-right: 1rem;
+  background: #00f2fe;
+  padding: 0.5rem 1rem;
+  color: black;
   text-decoration: none;
-  font-weight: bold;
+  border-radius: 6px;
   transition: background 0.3s;
 }
 
-.button:hover {
-  background: rgba(0, 0, 0, 0.7);
+header .btns a:hover {
+  background: #4facfe;
 }
 
-.chat-box {
-  max-height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.chatbox {
+  position: relative;
 }
 
-#chat-messages {
-  max-height: 250px;
+#chat-output {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  height: 200px;
   overflow-y: auto;
-  padding: 10px;
-  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
 }
 
-.chat-input {
+.input-area {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
 }
 
-.chat-input input {
+.input-area input {
   flex: 1;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 0.5rem 1rem;
   border: none;
+  border-radius: 10px 0 0 10px;
   outline: none;
 }
 
-.chat-input button {
-  padding: 10px 15px;
+.input-area button {
+  background: #00f2fe;
   border: none;
-  background-color: #00ffe5;
-  color: #000;
-  font-weight: bold;
-  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  border-radius: 0 10px 10px 0;
   cursor: pointer;
 }
