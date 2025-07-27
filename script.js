@@ -1,17 +1,22 @@
+const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
+
 function sendMessage() {
-  const input = document.getElementById("chat-input");
-  const output = document.getElementById("chat-output");
+  const message = userInput.value.trim();
+  if (!message) return;
 
-  if (input.value.trim() === "") return;
+  // Display user message
+  const userDiv = document.createElement("div");
+  userDiv.innerHTML = `<strong>You:</strong> ${message}`;
+  chatBox.appendChild(userDiv);
 
-  const userMsg = document.createElement("div");
-  userMsg.textContent = "👤 You: " + input.value;
-  output.appendChild(userMsg);
+  // Dummy AI response
+  const aiDiv = document.createElement("div");
+  setTimeout(() => {
+    aiDiv.innerHTML = `<strong>NeoSelf:</strong> That's interesting! I'm still learning. 😊`;
+    chatBox.appendChild(aiDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 700);
 
-  const aiMsg = document.createElement("div");
-  aiMsg.textContent = "🤖 AI: I received your message: " + input.value;
-  output.appendChild(aiMsg);
-
-  input.value = "";
-  output.scrollTop = output.scrollHeight;
+  userInput.value = "";
 }
