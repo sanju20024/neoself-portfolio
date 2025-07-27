@@ -88,3 +88,57 @@ footer {
   text-align: center;
   font-size: 0.9rem;
 }
+/* Background Animation */
+@keyframes animatedBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: linear-gradient(-45deg, #1f1c2c, #928dab, #373b44, #00e0ff);
+  background-size: 400% 400%;
+  animation: animatedBackground 20s ease infinite;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hero Text Entrance */
+.hero-text {
+  animation: fadeSlideIn 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo Glow Animation */
+.logo {
+  animation: neon-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff;
+  }
+  to {
+    text-shadow: 0 0 15px #00e0ff, 0 0 30px #00e0ff;
+  }
+}
+
+/* Card Reveal Animation */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
