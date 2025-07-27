@@ -2,35 +2,53 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeoSelf - AI Chat Assistant</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoSelf - AI-Powered Digital Twin Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 
 <body>
-  <header class="hero">
-    <h1>Welcome to My AI Portfolio</h1>
-  </header>
+    <div class="container">
+        <!-- Header / Intro -->
+        <header class="glass-box">
+            <h1>Hi, I'm Sanjay 👋</h1>
+            <p>Welcome to my AI-Powered Digital Twin Portfolio</p>
+            <a href="Sanjay_Kumar_Resume_.pdf" class="btn" target="_blank">Download Resume</a>
+        </header>
 
-  <section class="projects">
-    <h2>Projects</h2>
-    <div class="card">Weather App</div>
-    <div class="card">Portfolio Website</div>
-    <div class="card">AI Chatbot</div>
-  </section>
+        <!-- About Section -->
+        <section class="glass-box">
+            <h2>About Me</h2>
+            <p>I am a passionate tech enthusiast building futuristic tools using AI, JavaScript, and web technologies. I created this digital twin to reflect my skills, personality, and growth in real time.</p>
+        </section>
 
-  <footer>
-    <p>&copy; 2025 NeoSelf</p>
-  </footer>
+        <!-- Projects Section -->
+        <section class="glass-box">
+            <h2>Projects</h2>
+            <ul>
+                <li><strong>Weather Dashboard</strong> — Real-time weather updates using open APIs.</li>
+                <li><strong>Crypto Monitor</strong> — Tracks real-time market stats using WebSockets.</li>
+                <li><strong>NeoSelf</strong> — This AI-powered digital twin portfolio you're seeing!</li>
+            </ul>
+        </section>
 
-  <div class="chatbot-wrapper">
-    <div id="chat-window"></div>
-    <input type="text" id="user-input" placeholder="Ask me anything...">
-    <button id="send-btn">➤</button>
-  </div>
+        <!-- Chat Assistant Section -->
+        <section class="glass-box chat-section">
+            <h2>Ask Me Anything</h2>
+            <div class="chat-box" id="chat-box"></div>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Type your question here...">
+                <button id="send-btn">➤</button>
+            </div>
+        </section>
 
-  <script src="script.js"></script>
+        <!-- Footer -->
+        <footer class="glass-box">
+            <p>© 2025 Sanjay | Built with ❤️ & AI</p>
+        </footer>
+    </div>
 </body>
 
 </html>
