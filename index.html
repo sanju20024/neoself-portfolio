@@ -11,16 +11,36 @@
   <!-- Particle.js CDN -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
 </head>
-<body class="relative h-screen overflow-hidden text-white font-sans">
+<body class="relative h-screen overflow-x-hidden text-white">
 
   <!-- Animated Particle Background -->
-  <div id="particles-js" class="absolute top-0 left-0 w-full h-full -z-10"></div>
+  <div id="particles-js"></div>
 
   <!-- Header -->
-  <header class="p-6 text-center bg-transparent">
+  <header class="p-6 text-center">
     <h1 class="text-4xl font-bold tracking-wider">🚀 AI-Powered Digital Twin Portfolio</h1>
     <p class="text-lg text-cyan-300 mt-2">Your futuristic portfolio, now intelligent.</p>
   </header>
@@ -28,13 +48,13 @@
   <!-- Main Content -->
   <main class="flex flex-col items-center justify-center px-4 py-10 space-y-6">
     <!-- About Me Section -->
-    <section class="w-full max-w-4xl glass-box p-6">
+    <section class="w-full max-w-4xl glass-box">
       <h2 class="text-2xl font-semibold mb-4">👤 About Me</h2>
       <p>Hello, I'm Sanjay Thadaka. I'm a passionate web developer and aspiring AI engineer building futuristic digital solutions. This AI assistant is your gateway to learning more about me and my projects.</p>
     </section>
 
     <!-- Projects Section -->
-    <section class="w-full max-w-4xl glass-box p-6">
+    <section class="w-full max-w-4xl glass-box">
       <h2 class="text-2xl font-semibold mb-4">💼 Projects</h2>
       <ul class="list-disc list-inside space-y-2">
         <li>Real-Time Weather Dashboard with Glassy Design</li>
@@ -45,7 +65,7 @@
     </section>
 
     <!-- AI Chat Assistant -->
-    <section class="w-full max-w-4xl glass-box p-6">
+    <section class="w-full max-w-4xl glass-box">
       <h2 class="text-2xl font-semibold mb-4">🤖 AI Chat Assistant</h2>
       <div class="space-y-4">
         <div id="chatlog" class="h-48 overflow-y-auto bg-white/10 p-3 rounded-lg backdrop-blur-md border border-white/20 text-sm"></div>
@@ -62,75 +82,67 @@
     &copy; 2025 Sanjay Thadaka. Built with ❤️ and JavaScript.
   </footer>
 
-  <!-- Particle.js Configuration + Script -->
-  <!-- Particle.js Scripts -->
-<!-- Particle.js Script & Configuration -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-  // Initialize particles.js
-  particlesJS("particles-js", {
-    particles: {
-      number: {
-        value: 80,
-        density: {
-          enable: true,
-          value_area: 800
-        }
-      },
-      color: {
-        value: "#00bcd4"
-      },
-      shape: {
-        type: "circle"
-      },
-      opacity: {
-        value: 0.5,
-        random: false
-      },
-      size: {
-        value: 3,
-        random: true
-      },
-      line_linked: {
-        enable: true,
-        distance: 150,
-        color: "#00bcd4",
-        opacity: 0.4,
-        width: 1
-      },
-      move: {
-        enable: true,
-        speed: 3,
-        direction: "none",
-        out_mode: "out"
-      }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        onhover: {
-          enable: true,
-          mode: "repulse"
+  <!-- Particle.js Configuration Script -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 70,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
         },
-        onclick: {
-          enable: true,
-          mode: "push"
+        "color": {
+          "value": "#00FFFF"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5
+        },
+        "size": {
+          "value": 3,
+          "random": true
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00FFFF",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 3,
+          "direction": "none",
+          "out_mode": "out"
         }
       },
-      modes: {
-        repulse: {
-          distance: 100
+      "interactivity": {
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          }
         },
-        push: {
-          particles_nb: 4
+        "modes": {
+          "repulse": {
+            "distance": 100
+          },
+          "push": {
+            "particles_nb": 4
+          }
         }
-      }
-    },
-    retina_detect: true
-  });
-</script>
-
-
+      },
+      "retina_detect": true
+    });
+  </script>
 
 </body>
 </html>
