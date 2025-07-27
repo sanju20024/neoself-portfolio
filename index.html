@@ -2,59 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sanjay Kumar | AI Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeoSelf — AI Digital Twin</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background-blur"></div>
+  <div class="container">
+    <header>
+      <h1>👤 NeoSelf</h1>
+      <p>Your AI-Powered Digital Twin</p>
+    </header>
 
-  <header class="glass">
-    <h1>Sanjay Kumar</h1>
-    <p>Full Stack Developer & AI Enthusiast</p>
-    <div class="btns">
-      <a href="https://github.com/sanju20024" target="_blank">GitHub</a>
-      <a href="Sanjay_Kumar_Resume_.pdf" target="_blank">Resume</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="glass">
-      <h2>About Me</h2>
-      <p>I’m a passionate developer building intelligent, responsive web experiences using HTML, CSS, JS, and AI tools.</p>
-    </section>
-
-    <section class="glass">
-      <h2>Projects</h2>
-      <ul>
-        <li>🌤️ Real-Time Weather Dashboard</li>
-        <li>🤖 AI Digital Twin Portfolio</li>
-        <li>🎯 Product Landing Page (Glassy Bootstrap)</li>
-      </ul>
-    </section>
-
-    <section class="glass">
-      <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, Bootstrap, GitHub, Python, AI Chatbots, Responsive UI</p>
-    </section>
-
-    <section class="glass">
-      <h2>Contact</h2>
-      <p>Email: youremail@example.com</p>
-      <p>Phone: +91-XXXXXXXXXX</p>
-    </section>
-
-    <!-- AI Chat Assistant -->
-    <section class="glass chatbox">
-      <h2>Ask Me (AI)</h2>
-      <div id="chat-output"></div>
-      <div class="input-area">
-        <input type="text" id="chat-input" placeholder="Ask me anything..." />
-        <button onclick="sendMessage()">➤</button>
+    <section class="hero">
+      <div class="glass-box">
+        <h2>Hello, I’m Sanjay Kumar</h2>
+        <p>CS Engineer | Web Developer | AI Enthusiast</p>
+        <a href="Sanjay_Kumar_Resume_.pdf" class="resume-btn" download>📄 Download Resume</a>
       </div>
     </section>
-  </main>
 
+    <section class="projects">
+      <div class="glass-box">
+        <h3>🚀 Featured Projects</h3>
+        <ul>
+          <li>🌤 Real-time Weather Dashboard</li>
+          <li>🧠 AI Chatbot Assistant</li>
+          <li>📊 Resume & GitHub Tracker</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chat-section">
+      <div class="glass-box">
+        <h3>🧠 Ask NeoSelf</h3>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Type your question..." />
+          <button onclick="sendMessage()">➤</button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 Sanjay Kumar. Powered by NeoSelf.</p>
+    </footer>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
