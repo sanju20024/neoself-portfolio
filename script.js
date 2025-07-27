@@ -1,42 +1,22 @@
-const chatBox = document.getElementById("chat-box");
-const userInput = document.getElementById("user-input");
-
 function sendMessage() {
-  const input = userInput.value.trim();
-  if (!input) return;
+  const input = document.getElementById("user-input");
+  const message = input.value.trim();
+  if (message === "") return;
 
-  appendMessage("You", input);
-  userInput.value = "";
+  const chatMessages = document.getElementById("chat-messages");
+  const userMsg = document.createElement("div");
+  userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+  chatMessages.appendChild(userMsg);
 
-  // Simulated AI reply
+  const aiResponse = document.createElement("div");
+  aiResponse.innerHTML = "<strong>AI:</strong> thinking...";
+  chatMessages.appendChild(aiResponse);
+
+  // Simulate AI thinking
   setTimeout(() => {
-    const reply = generateAIResponse(input);
-    appendMessage("NeoAI", reply);
-  }, 800);
+    aiResponse.innerHTML = `<strong>AI:</strong> I'm still in training. Try again later!`;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }, 1000);
+
+  input.value = "";
 }
-
-function appendMessage(sender, message) {
-  const msg = document.createElement("div");
-  msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
-  chatBox.appendChild(msg);
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
-function generateAIResponse(input) {
-  const responses = {
-    "hello": "Hi there! How can I assist you today?",
-    "resume": "You can find my resume linked above.",
-    "github": "Check my GitHub at github.com/sanju20024",
-    "default": "I'm your AI twin — ask me about skills, projects, or anything!"
-  };
-
-  input = input.toLowerCase();
-  return responses[input] || responses["default"];
-}
-
-// Enter key support
-userInput.addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    sendMessage();
-  }
-});
