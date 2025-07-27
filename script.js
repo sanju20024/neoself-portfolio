@@ -1,42 +1,60 @@
-const chatWindow = document.getElementById('chat-window');
-const userInput = document.getElementById('user-input');
-const sendBtn = document.getElementById('send-btn');
+document.addEventListener("DOMContentLoaded", () => {
+  const chatBox = document.getElementById("chat-box");
+  const userInput = document.getElementById("user-input");
+  const sendBtn = document.getElementById("send-btn");
 
-// Dummy response generator
-function generateReply(userMessage) {
-  return `You said: "${userMessage}" 🤖`;
-}
+  // Handle Enter key
+  userInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
 
-// Display message in chat window
-function appendMessage(message, sender = 'user') {
-  const msgDiv = document.createElement('div');
-  msgDiv.className = sender === 'user' ? 'user-message' : 'bot-message';
-  msgDiv.textContent = message;
-  msgDiv.style.marginBottom = '10px';
-  chatWindow.appendChild(msgDiv);
-  chatWindow.scrollTop = chatWindow.scrollHeight;
-}
+  // Handle click on Send button
+  sendBtn.addEventListener("click", () => {
+    sendMessage();
+  });
 
-// Send message handler
-function handleSend() {
-  const message = userInput.value.trim();
-  if (!message) return;
+  function sendMessage() {
+    const message = userInput.value.trim();
+    if (message === "") return;
 
-  appendMessage(message, 'user');
-  userInput.value = '';
+    appendMessage("user", message);
+    userInput.value = "";
 
-  setTimeout(() => {
-    const reply = generateReply(message);
-    appendMessage(reply, 'bot');
-  }, 800);
-}
+    setTimeout(() => {
+      const response = generateAIResponse(message);
+      appendMessage("ai", response);
+    }, 600); // simulate response delay
+  }
 
-// Button click
-sendBtn.addEventListener('click', handleSend);
+  function appendMessage(sender, message) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("chat-message", sender);
+    msgDiv.innerText = message;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
 
-// Enter key
-userInput.addEventListener('keypress', function (e) {
-  if (e.key === 'Enter') {
-    handleSend();
+  function generateAIResponse(input) {
+    // Simple static responses for now
+    const responses = {
+      hello: "Hi there! How can I assist you with your portfolio?",
+      help: "Sure! I can help you with your resume, projects, GitHub links, or anything else related to your profile.",
+      github: "Here’s your GitHub: https://github.com/yourusername",
+      resume: "You can download your resume from the top section of this page.",
+      thanks: "You're welcome! 😊",
+    };
+
+    input = input.toLowerCase();
+
+    for (let keyword in responses) {
+      if (input.includes(keyword)) {
+        return responses[keyword];
+      }
+    }
+
+    return "Sorry, I didn’t quite get that. Can you please rephrase?";
   }
 });
