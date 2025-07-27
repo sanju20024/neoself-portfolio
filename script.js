@@ -1,47 +1,42 @@
-// Typing effect for hero text
-const typedText = document.querySelector(".hero-text p");
-const text = "Aspiring AI/ML + Cybersecurity Engineer";
-let index = 0;
+const chatBox = document.getElementById("chat-box");
+const userInput = document.getElementById("user-input");
 
-function typeEffect() {
-  if (index < text.length) {
-    typedText.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeEffect, 80);
-  }
+function sendMessage() {
+  const input = userInput.value.trim();
+  if (!input) return;
+
+  appendMessage("You", input);
+  userInput.value = "";
+
+  // Simulated AI reply
+  setTimeout(() => {
+    const reply = generateAIResponse(input);
+    appendMessage("NeoAI", reply);
+  }, 800);
 }
-typedText.innerHTML = "";
-typeEffect();
 
-// Scroll animations
-const faders = document.querySelectorAll(".card, .hero, .projects, footer");
+function appendMessage(sender, message) {
+  const msg = document.createElement("div");
+  msg.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatBox.appendChild(msg);
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
 
-const appearOptions = {
-  threshold: 0.2,
-  rootMargin: "0px 0px -50px 0px"
-};
+function generateAIResponse(input) {
+  const responses = {
+    "hello": "Hi there! How can I assist you today?",
+    "resume": "You can find my resume linked above.",
+    "github": "Check my GitHub at github.com/sanju20024",
+    "default": "I'm your AI twin — ask me about skills, projects, or anything!"
+  };
 
-const appearOnScroll = new IntersectionObserver(function(
-  entries,
-  appearOnScroll
-) {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add("fade-in");
-    appearOnScroll.unobserve(entry.target);
-  });
-}, appearOptions);
+  input = input.toLowerCase();
+  return responses[input] || responses["default"];
+}
 
-faders.forEach(fader => {
-  appearOnScroll.observe(fader);
-});
-
-// Smooth scroll for nav links
-document.querySelectorAll('.nav-links a').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
+// Enter key support
+userInput.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
 });
