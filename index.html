@@ -64,9 +64,72 @@
 
   <!-- Particle.js Configuration + Script -->
   <!-- Particle.js Scripts -->
+<!-- Particle.js Script & Configuration -->
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="particles-config.js"></script>
-<script src="script.js"></script>
+<script>
+  // Initialize particles.js
+  particlesJS("particles-js", {
+    particles: {
+      number: {
+        value: 80,
+        density: {
+          enable: true,
+          value_area: 800
+        }
+      },
+      color: {
+        value: "#00bcd4"
+      },
+      shape: {
+        type: "circle"
+      },
+      opacity: {
+        value: 0.5,
+        random: false
+      },
+      size: {
+        value: 3,
+        random: true
+      },
+      line_linked: {
+        enable: true,
+        distance: 150,
+        color: "#00bcd4",
+        opacity: 0.4,
+        width: 1
+      },
+      move: {
+        enable: true,
+        speed: 3,
+        direction: "none",
+        out_mode: "out"
+      }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: {
+        onhover: {
+          enable: true,
+          mode: "repulse"
+        },
+        onclick: {
+          enable: true,
+          mode: "push"
+        }
+      },
+      modes: {
+        repulse: {
+          distance: 100
+        },
+        push: {
+          particles_nb: 4
+        }
+      }
+    },
+    retina_detect: true
+  });
+</script>
+
 
 
 </body>
