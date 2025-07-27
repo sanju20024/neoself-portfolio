@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NeoSelf Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI-Powered Digital Twin Portfolio</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Particle.js CDN -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body class="relative h-screen overflow-hidden text-white font-sans">
 
-<body>
   <!-- Particle Background -->
-  <div id="particles-js"></div>
+  <div id="particles-js" class="absolute top-0 left-0 w-full h-full -z-10"></div>
 
-  <!-- Glassy Container -->
-  <div class="container">
-    <header>
-      <h1>Hi, I'm Sanjay 👋</h1>
-      <p>AI-Powered Digital Twin Portfolio</p>
-    </header>
+  <!-- Header -->
+  <header class="p-6 text-center bg-transparent">
+    <h1 class="text-4xl font-bold tracking-wider">🚀 AI-Powered Digital Twin Portfolio</h1>
+    <p class="text-lg text-cyan-300 mt-2">Your futuristic portfolio, now intelligent.</p>
+  </header>
 
-    <!-- Chat Box -->
-    <div class="chatbox">
-      <div id="chat-output"></div>
-      <input type="text" id="chat-input" placeholder="Ask me anything..." />
-      <button id="send-btn">Send</button>
-    </div>
+  <!-- Main Content -->
+  <main class="flex flex-col items-center justify-center px-4 py-10 space-y-6">
+    <section class="w-full max-w-4xl glass-box p-6">
+      <h2 class="text-2xl font-semibold mb-4">👤 About Me</h2>
+      <p>Hello, I'm Sanjay Thadaka. I'm a passionate web developer and aspiring AI engineer building futuristic digital solutions. This AI assistant is your gateway to learning more about me and my projects.</p>
+    </section>
 
-    <!-- Resume Link -->
-    <div class="resume">
-      <a href="Sanjay_Kumar_Resume_.pdf" target="_blank">📄 View My Resume</a>
-    </div>
-  </div>
+    <section class="w-full max-w-4xl glass-box p-6">
+      <h2 class="text-2xl font-semibold mb-4">💼 Projects</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Real-Time Weather Dashboard with Glassy Design</li>
+        <li>Deepfake Detection Using AI – Seminar Presentation</li>
+        <li>Advanced Neural Network for Loan Fraud Detection</li>
+        <li>18+ Responsive Static Websites with HTML/CSS/Bootstrap</li>
+      </ul>
+    </section>
 
-  <!-- Particle.js Library -->
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <!-- Main JS File -->
+    <!-- AI Chat Assistant -->
+    <section class="w-full max-w-4xl glass-box p-6">
+      <h2 class="text-2xl font-semibold mb-4">🤖 AI Chat Assistant</h2>
+      <div class="space-y-4">
+        <div id="chatlog" class="h-48 overflow-y-auto bg-white/10 p-3 rounded-lg backdrop-blur-md border border-white/20 text-sm"></div>
+        <div class="flex space-x-2">
+          <input type="text" id="userInput" placeholder="Ask me anything..." class="flex-1 px-3 py-2 rounded-md bg-white/10 text-white placeholder-white/70 backdrop-blur-md border border-white/20 outline-none focus:ring-2 focus:ring-cyan-400" />
+          <button id="sendBtn" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-md transition-all">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="absolute bottom-0 w-full text-center text-sm p-3 text-white/70">
+    &copy; 2025 Sanjay Thadaka. Built with ❤️ and JavaScript.
+  </footer>
+
+  <!-- Custom Script -->
   <script src="script.js"></script>
 </body>
-
 </html>
