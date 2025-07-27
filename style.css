@@ -42,3 +42,21 @@ body {
 #chatlog::-webkit-scrollbar-track {
   background: transparent;
 }
+/* particles background */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  top: 0;
+  left: 0;
+}
+
+/* Chat box and other UI should appear above the particles */
+.glassy-chatbox,
+#chatlog,
+.input-container {
+  position: relative;
+  z-index: 2;
+}
+
