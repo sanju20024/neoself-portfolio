@@ -1,61 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeoSelf - Digital Twin Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <script src="script.js"></script>
-  <link rel="stylesheet" href="styles.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoSelf - AI Chat Assistant</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <header class="glass">
-      <h1>👤 NeoSelf: Sanjay Kumar</h1>
-      <p>AI-Powered Digital Twin Portfolio</p>
-    </header>
+  <header class="hero">
+    <h1>Welcome to My AI Portfolio</h1>
+  </header>
 
-    <section class="hero glass">
-      <h2>Hello, I’m Sanjay 👋</h2>
-      <p>Aspiring AI/ML + Cybersecurity Engineer</p>
-      <div class="btn-group">
-        <a href="Sanjay_Kumar_Resume_.pdf" class="btn" download>📄 Download Resume</a>
-        <a href="https://github.com/sanju20024" class="btn" target="_blank">💻 GitHub</a>
-        <div class="chatbot-wrapper">
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="card">Weather App</div>
+    <div class="card">Portfolio Website</div>
+    <div class="card">AI Chatbot</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NeoSelf</p>
+  </footer>
+
   <div class="chatbot-wrapper">
-  <div class="chat-header">🤖 Ask NeoSelf</div>
-  <div id="chat-window" class="chat-window glassy-box"></div>
-  <input type="text" id="user-input" placeholder="Ask me anything..." />
-</div>
-
-
-      </div>
-    </section>
-
-    <section class="projects glass">
-      <h2>🚀 Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>🌦️ Weather Dashboard</h3>
-          <p>Real-time local weather with animated backgrounds</p>
-        </div>
-        <div class="card">
-          <h3>🎯 AI Digital Twin</h3>
-          <p>Personal assistant with resume + GitHub integration</p>
-        </div>
-        <div class="card">
-          <h3>🛡️ Loan Fraud Detector</h3>
-          <p>Hybrid ML model using MLP + KNN for fraud detection</p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="glass">
-      <p>Built by Sanjay Kumar • 2025 • NeoSelf v1.0</p>
-    </footer>
+    <div id="chat-window"></div>
+    <input type="text" id="user-input" placeholder="Ask me anything...">
+    <button id="send-btn">➤</button>
   </div>
+
   <script src="script.js"></script>
 </body>
+
 </html>
