@@ -1,63 +1,34 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NeoSelf - Digital Twin Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NeoSelf | AI Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="glass-header">
+  <header class="header">
     <h1>NeoSelf</h1>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#chat">AI Chat</a></li>
-        <li><a href="Sanjay_Kumar_Resume_.pdf" download>Resume</a></li>
-      </ul>
-    </nav>
+    <p>AI-Powered Digital Twin Portfolio</p>
   </header>
 
-  <section id="home" class="hero-section glass">
-    <div class="hero-content">
-      <h2>Hello, I'm Sanjay</h2>
-      <p class="typing-text">Your AI-powered digital twin portfolio</p>
+  <main class="main-content">
+    <section class="intro-card glass">
+      <h2>Hello, I'm Sanjay Kumar</h2>
+      <p>Cybersecurity Enthusiast | Future Tech Developer</p>
+      <a href="Sanjay_Kumar_Resume_.pdf" target="_blank" class="resume-btn">View Resume</a>
+    </section>
+  </main>
+
+  <!-- AI Chat Box -->
+  <div class="chat-container glass">
+    <div class="chat-header">Ask My Digital Twin</div>
+    <div class="chat-box" id="chat-box"></div>
+    <div class="chat-input">
+      <input type="text" id="user-input" placeholder="Ask me anything..." />
+      <button onclick="sendMessage()">Send</button>
     </div>
-  </section>
-
-  <section id="about" class="glass-section">
-    <h2>About Me</h2>
-    <p>I'm passionate about building intelligent, futuristic web solutions that integrate AI. This portfolio is powered by a smart assistant to interact with you in real time.</p>
-  </section>
-
-  <section id="projects" class="glass-section">
-    <h2>Projects</h2>
-    <ul>
-      <li>Real-Time Weather Dashboard</li>
-      <li>AI-Based Fraud Detection System</li>
-      <li>18+ Static Web Projects (HTML, CSS, Bootstrap)</li>
-      <li>More coming soon...</li>
-    </ul>
-  </section>
-
-  <section id="chat" class="glass-section">
-    <h2>Talk to Me</h2>
-    <div class="chatbox glass">
-      <div id="chat-log"></div>
-      <div class="chat-input-area">
-        <input type="text" id="user-input" placeholder="Ask me anything..." />
-        <button id="send-btn">Send</button>
-      </div>
-    </div>
-  </section>
-
-  <footer class="glass-footer">
-    <p>&copy; 2025 Sanjay | Powered by NeoSelf</p>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
