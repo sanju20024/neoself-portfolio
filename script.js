@@ -1,40 +1,41 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const sendBtn = document.getElementById("send-btn");
-  const userInput = document.getElementById("user-input");
-  const chatContainer = document.getElementById("chat-container");
+document.getElementById("sendBtn").addEventListener("click", async () => {
+  const input = document.getElementById("userInput");
+  const chatlog = document.getElementById("chatlog");
+  const message = input.value.trim();
 
-  sendBtn.addEventListener("click", sendMessage);
-  userInput.addEventListener("keydown", function (e) {
-    if (e.key === "Enter") sendMessage();
-  });
+  if (!message) return;
 
-  async function sendMessage() {
-    const message = userInput.value.trim();
-    if (message === "") return;
+  // Show user message
+  const userMsg = document.createElement("div");
+  userMsg.className = "mb-2";
+  userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+  chatlog.appendChild(userMsg);
 
-    addMessage("user", message);
-    userInput.value = "";
+  input.value = "";
+  chatlog.scrollTop = chatlog.scrollHeight;
 
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message }),
-      });
+  try {
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message })
+    });
 
-      const data = await response.json();
-      addMessage("ai", data.reply || "No response from AI.");
-    } catch (error) {
-      console.error("Fetch error:", error);
-      addMessage("ai", "Error contacting AI.");
-    }
-  }
+    const data = await response.json();
 
-  function addMessage(role, text) {
-    const messageDiv = document.createElement("div");
-    messageDiv.className = role;
-    messageDiv.innerText = text;
-    chatContainer.appendChild(messageDiv);
-    chatContainer.scrollTop = chatContainer.scrollHeight;
+    const botMsg = document.createElement("div");
+    botMsg.className = "mb-2 text-cyan-300";
+    botMsg.innerHTML = `<strong>AI:</strong> ${data.reply}`;
+    chatlog.appendChild(botMsg);
+
+    chatlog.scrollTop = chatlog.scrollHeight;
+  } catch (err) {
+    console.error("Error:", err);
+    const errMsg = document.createElement("div");
+    errMsg.className = "mb-2 text-red-400";
+    errMsg.innerHTML = "<strong>AI:</strong> Error connecting to the server.";
+    chatlog.appendChild(errMsg);
   }
 });
