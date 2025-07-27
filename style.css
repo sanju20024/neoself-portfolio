@@ -1,83 +1,36 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;500&display=swap');
 
 body {
-  background: linear-gradient(to right top, #1f1c2c, #928dab);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
   color: white;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-}
-
-header, .hero, .projects, footer {
-  margin-bottom: 40px;
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-}
-
-header h1 {
+.hero {
+  padding: 3rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
-  color: #ffffff;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.btn-group {
-  margin-top: 20px;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin-right: 10px;
-  background: rgba(255,255,255,0.2);
-  color: white;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.btn:hover {
-  background: rgba(255,255,255,0.3);
-}
-
-.projects h2 {
-  margin-bottom: 20px;
-}
-
-.grid {
+.projects {
+  padding: 2rem;
   display: grid;
-  gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover {
@@ -86,122 +39,50 @@ header h1 {
 
 footer {
   text-align: center;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
   font-size: 0.9rem;
 }
-/* Background Animation */
-@keyframes animatedBackground {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
 
-body {
-  background: linear-gradient(-45deg, #1f1c2c, #928dab, #373b44, #00e0ff);
-  background-size: 400% 400%;
-  animation: animatedBackground 20s ease infinite;
-  transition: all 0.5s ease-in-out;
-}
-
-/* Hero Text Entrance */
-.hero-text {
-  animation: fadeSlideIn 1s ease forwards;
-  opacity: 0;
-  transform: translateY(20px);
-}
-
-@keyframes fadeSlideIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Logo Glow Animation */
-.logo {
-  animation: neon-glow 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes neon-glow {
-  from {
-    text-shadow: 0 0 5px #00e0ff, 0 0 10px #00e0ff;
-  }
-  to {
-    text-shadow: 0 0 15px #00e0ff, 0 0 30px #00e0ff;
-  }
-}
-
-/* Card Reveal Animation */
-.card {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.5s ease-out;
-}
 .chatbot-wrapper {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   width: 320px;
+  max-height: 500px;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
-  font-family: 'Segoe UI', sans-serif;
-  z-index: 9999;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
 }
 
-.chat-header {
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  padding: 12px;
-  font-size: 16px;
-  text-align: center;
-  font-weight: bold;
-}
-.chat-window {
-  max-height: 300px;
-  overflow-y: auto;
+#chat-window {
+  flex: 1;
   padding: 10px;
-  color: white;
-  background: rgba(255, 255, 255, 0.05);
+  overflow-y: auto;
   font-size: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 0 0 0 0;
-  transition: all 0.3s ease-in-out;
 }
 
 #user-input {
-  width: 100%;
   border: none;
   padding: 10px;
-  font-size: 14px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.1);
+  width: calc(100% - 40px);
+  background: transparent;
   color: white;
-}
-.user {
-  margin: 6px 0;
-  color: #00ffea;
+  outline: none;
+  font-size: 14px;
 }
 
-.ai {
-  margin: 6px 0;
-  color: #ffffff;
-  font-style: italic;
+#send-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 10px 10px 0;
+  align-self: flex-end;
 }
-
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-thumb {
-  background: #999;
-  border-radius: 10px;
-}
-.card.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
