@@ -14,9 +14,9 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="relative h-screen overflow-x-hidden text-white font-sans">
+<body class="relative h-screen overflow-hidden text-white font-sans">
 
-  <!-- Particle Background -->
+  <!-- Animated Particle Background -->
   <div id="particles-js" class="absolute top-0 left-0 w-full h-full -z-10"></div>
 
   <!-- Header -->
@@ -26,12 +26,14 @@
   </header>
 
   <!-- Main Content -->
-  <main class="flex flex-col items-center justify-center px-4 py-10 space-y-6 pb-40">
+  <main class="flex flex-col items-center justify-center px-4 py-10 space-y-6">
+    <!-- About Me Section -->
     <section class="w-full max-w-4xl glass-box p-6">
       <h2 class="text-2xl font-semibold mb-4">👤 About Me</h2>
       <p>Hello, I'm Sanjay Thadaka. I'm a passionate web developer and aspiring AI engineer building futuristic digital solutions. This AI assistant is your gateway to learning more about me and my projects.</p>
     </section>
 
+    <!-- Projects Section -->
     <section class="w-full max-w-4xl glass-box p-6">
       <h2 class="text-2xl font-semibold mb-4">💼 Projects</h2>
       <ul class="list-disc list-inside space-y-2">
@@ -46,7 +48,7 @@
     <section class="w-full max-w-4xl glass-box p-6">
       <h2 class="text-2xl font-semibold mb-4">🤖 AI Chat Assistant</h2>
       <div class="space-y-4">
-        <div id="chatlog" class="h-48 max-h-48 overflow-y-auto bg-white/10 p-3 rounded-lg backdrop-blur-md border border-white/20 text-sm"></div>
+        <div id="chatlog" class="h-48 overflow-y-auto bg-white/10 p-3 rounded-lg backdrop-blur-md border border-white/20 text-sm"></div>
         <div class="flex space-x-2">
           <input type="text" id="userInput" placeholder="Ask me anything..." class="flex-1 px-3 py-2 rounded-md bg-white/10 text-white placeholder-white/70 backdrop-blur-md border border-white/20 outline-none focus:ring-2 focus:ring-cyan-400" />
           <button id="sendBtn" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-md transition-all">Send</button>
@@ -60,8 +62,9 @@
     &copy; 2025 Sanjay Thadaka. Built with ❤️ and JavaScript.
   </footer>
 
-  <!-- Scripts -->
+  <!-- Particle.js Configuration + Script -->
   <script src="particles-config.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
