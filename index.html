@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeoSelf | AI Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>NeoSelf Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <header class="header">
-    <h1>NeoSelf</h1>
-    <p>AI-Powered Digital Twin Portfolio</p>
+  <header class="glass-header">
+    <h1>NeoSelf Portfolio</h1>
   </header>
 
-  <main class="main-content">
-    <section class="intro-card glass">
-      <h2>Hello, I'm Sanjay Kumar</h2>
-      <p>Cybersecurity Enthusiast | Future Tech Developer</p>
-      <a href="Sanjay_Kumar_Resume_.pdf" target="_blank" class="resume-btn">View Resume</a>
+  <main class="content">
+    <section class="intro glass">
+      <h2>Welcome, I'm Sanjay 👋</h2>
+      <p>AI-powered digital twin portfolio with GitHub and resume integration.</p>
+    </section>
+
+    <section class="resume glass">
+      <h3>Resume & GitHub</h3>
+      <a href="Sanjay_Kumar_Resume_.pdf" download class="button">Download Resume</a>
+      <a href="https://github.com/sanju20024" target="_blank" class="button">Visit GitHub</a>
+    </section>
+
+    <section class="chat-box glass">
+      <div id="chat-messages"></div>
+      <div class="chat-input">
+        <input type="text" id="user-input" placeholder="Ask me anything..." />
+        <button onclick="sendMessage()">➤</button>
+      </div>
     </section>
   </main>
-
-  <!-- AI Chat Box -->
-  <div class="chat-container glass">
-    <div class="chat-header">Ask My Digital Twin</div>
-    <div class="chat-box" id="chat-box"></div>
-    <div class="chat-input">
-      <input type="text" id="user-input" placeholder="Ask me anything..." />
-      <button onclick="sendMessage()">Send</button>
-    </div>
-  </div>
 
   <script src="script.js"></script>
 </body>
