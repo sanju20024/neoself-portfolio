@@ -1,54 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoSelf - AI-Powered Digital Twin Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeoSelf - AI Digital Twin Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
-
 <body>
-    <div class="container">
-        <!-- Header / Intro -->
-        <header class="glass-box">
-            <h1>Hi, I'm Sanjay 👋</h1>
-            <p>Welcome to my AI-Powered Digital Twin Portfolio</p>
-            <a href="Sanjay_Kumar_Resume_.pdf" class="btn" target="_blank">Download Resume</a>
-        </header>
+  <header class="glass-header">
+    <h1>NeoSelf</h1>
+    <p>Welcome to my futuristic digital twin portfolio</p>
+  </header>
 
-        <!-- About Section -->
-        <section class="glass-box">
-            <h2>About Me</h2>
-            <p>I am a passionate tech enthusiast building futuristic tools using AI, JavaScript, and web technologies. I created this digital twin to reflect my skills, personality, and growth in real time.</p>
-        </section>
+  <section class="hero glass-box">
+    <h2>Hello, I'm Sanjay</h2>
+    <p>Aspiring Developer & AI Enthusiast</p>
+    <a href="Sanjay_Kumar_Resume_.pdf" download class="btn-glass">Download Resume</a>
+  </section>
 
-        <!-- Projects Section -->
-        <section class="glass-box">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Weather Dashboard</strong> — Real-time weather updates using open APIs.</li>
-                <li><strong>Crypto Monitor</strong> — Tracks real-time market stats using WebSockets.</li>
-                <li><strong>NeoSelf</strong> — This AI-powered digital twin portfolio you're seeing!</li>
-            </ul>
-        </section>
+  <section class="projects glass-box">
+    <h2>Projects</h2>
+    <ul>
+      <li>Real-Time Weather Dashboard</li>
+      <li>Deepfake Detection using AI</li>
+      <li>Crypto Market Monitoring (SQL)</li>
+    </ul>
+  </section>
 
-        <!-- Chat Assistant Section -->
-        <section class="glass-box chat-section">
-            <h2>Ask Me Anything</h2>
-            <div class="chat-box" id="chat-box"></div>
-            <div class="chat-input">
-                <input type="text" id="user-input" placeholder="Type your question here...">
-                <button id="send-btn">➤</button>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="glass-box">
-            <p>© 2025 Sanjay | Built with ❤️ & AI</p>
-        </footer>
+  <section class="chat-box glass-box">
+    <h2>Ask My AI Twin</h2>
+    <div class="chat-window" id="chatWindow"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Ask me anything..." />
+      <button onclick="sendMessage()">Send</button>
     </div>
-</body>
+  </section>
 
+  <footer class="glass-footer">
+    <p>&copy; 2025 NeoSelf Portfolio. Built with ❤️</p>
+  </footer>
+</body>
 </html>
