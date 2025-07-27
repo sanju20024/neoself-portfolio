@@ -45,3 +45,41 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
   });
 });
+const chatWindow = document.getElementById("chat-window");
+const userInput = document.getElementById("user-input");
+
+// Optional: AI response simulation
+function getAIResponse(message) {
+  return `You said: "${message}" 🤖 [NeoSelf is still learning!]`;
+}
+
+// Render message to chat window
+function renderMessage(sender, message) {
+  const msg = document.createElement("div");
+  msg.className = sender;
+  msg.innerText = message;
+  chatWindow.appendChild(msg);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+// Handle input submission
+function sendMessage() {
+  const input = userInput.value.trim();
+  if (input === "") return;
+
+  renderMessage("user", "You: " + input);
+  userInput.value = "";
+
+  // Simulate AI response
+  setTimeout(() => {
+    const response = getAIResponse(input);
+    renderMessage("ai", "NeoSelf: " + response);
+  }, 600);
+}
+
+// Press Enter to send
+userInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
