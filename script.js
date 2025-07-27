@@ -1,28 +1,47 @@
-function handleChat() {
-  const input = document.getElementById("user-input").value;
-  const chatBox = document.getElementById("chat-box");
+// Typing effect for hero text
+const typedText = document.querySelector(".hero-text p");
+const text = "Aspiring AI/ML + Cybersecurity Engineer";
+let index = 0;
 
-  if (input.trim() !== "") {
-    const userMsg = `<div><strong>You:</strong> ${input}</div>`;
-    const reply = `<div><strong>NeoSelf:</strong> I'm learning more about you every day!</div>`;
-    chatBox.innerHTML += userMsg + reply;
-    document.getElementById("user-input").value = "";
-    chatBox.scrollTop = chatBox.scrollHeight;
+function typeEffect() {
+  if (index < text.length) {
+    typedText.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeEffect, 80);
   }
 }
-async function fetchGitHubProfile(username) {
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const data = await response.json();
+typedText.innerHTML = "";
+typeEffect();
 
-    if (response.ok) {
-        document.getElementById("github-name").textContent = data.name || data.login;
-        document.getElementById("github-bio").textContent = data.bio || "No bio available.";
-        document.getElementById("github-followers").textContent = `Followers: ${data.followers}`;
-        document.getElementById("github-link").href = data.html_url;
-    } else {
-        alert("GitHub profile not found");
-    }
-}
+// Scroll animations
+const faders = document.querySelectorAll(".card, .hero, .projects, footer");
 
-// Replace 'yourusername' with your actual GitHub username
-fetchGitHubProfile("sanju20024");
+const appearOptions = {
+  threshold: 0.2,
+  rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(
+  entries,
+  appearOnScroll
+) {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add("fade-in");
+    appearOnScroll.unobserve(entry.target);
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
