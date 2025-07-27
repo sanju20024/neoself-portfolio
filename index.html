@@ -1,76 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NeoSelf Portfolio</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeoSelf Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <!-- Particle Background -->
   <div id="particles-js"></div>
 
-  <nav class="glass-box navbar">
-    <div class="logo">NeoSelf</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
-    </ul>
-  </nav>
-
+  <!-- Glassy Container -->
   <div class="container">
-    <header class="glass-box">
-      <h1>Welcome to My NeoSelf Portfolio</h1>
-      <p>Crafted with AI, Style & Futuristic UI</p>
+    <header>
+      <h1>Hi, I'm Sanjay 👋</h1>
+      <p>AI-Powered Digital Twin Portfolio</p>
     </header>
 
-    <main class="glass-box">
-      <section id="about">
-        <h2>About Me</h2>
-        <p>I’m a passionate developer building AI-driven portfolios and futuristic web apps.</p>
-      </section>
+    <!-- Chat Box -->
+    <div class="chatbox">
+      <div id="chat-output"></div>
+      <input type="text" id="chat-input" placeholder="Ask me anything..." />
+      <button id="send-btn">Send</button>
+    </div>
 
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="cards">
-          <div class="card">Weather Dashboard</div>
-          <div class="card">AI Digital Twin</div>
-          <div class="card">Portfolio Glass UI</div>
-        </div>
-      </section>
-
-      <section id="resume">
-        <h2>Resume</h2>
-        <a href="Sanjay_Kumar_Resume_.pdf" class="resume-button" target="_blank">Download Resume</a>
-      </section>
-    </main>
-
-    <footer class="glass-box footer">
-      <p>Connect with me:</p>
-      <div class="social-icons">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
-    </footer>
-
-    <div class="chat-box glass-box">
-      <h3>NeoBot</h3>
-      <div id="chatLog"></div>
-      <input type="text" id="userInput" placeholder="Type your question..." />
-      <button onclick="sendMessage()">Send</button>
+    <!-- Resume Link -->
+    <div class="resume">
+      <a href="Sanjay_Kumar_Resume_.pdf" target="_blank">📄 View My Resume</a>
     </div>
   </div>
 
+  <!-- Particle.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Main JS File -->
   <script src="script.js"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS.load('particles-js', 'particles.json', function() {
-      console.log('particles.js loaded');
-    });
-  </script>
 </body>
+
 </html>
