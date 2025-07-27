@@ -16,19 +16,15 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 
   try {
     const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message })
-    });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ message: userMessage })
+});
+const data = await response.json();
+botMsg.innerHTML = `<strong>AI:</strong> ${data.reply || "No response from AI."}`;
 
-    const data = await response.json();
-
-    const botMsg = document.createElement("div");
-    botMsg.className = "mb-2 text-cyan-300";
-    botMsg.innerHTML = `<strong>AI:</strong> ${data.reply || "No response from AI."}`;
-    chatlog.appendChild(botMsg);
 
     chatlog.scrollTop = chatlog.scrollHeight;
   } catch (err) {
