@@ -27,7 +27,7 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 
     const botMsg = document.createElement("div");
     botMsg.className = "mb-2 text-cyan-300";
-    botMsg.innerHTML = `<strong>AI:</strong> ${data.reply}`;
+    botMsg.innerHTML = `<strong>AI:</strong> ${data.reply || "No response from AI."}`;
     chatlog.appendChild(botMsg);
 
     chatlog.scrollTop = chatlog.scrollHeight;
