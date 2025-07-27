@@ -5,10 +5,10 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 
   if (!message) return;
 
-  // Show user message
+  // --- Display user message ---
   const userMsg = document.createElement("div");
-  userMsg.className = "mb-2";
-  userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+  userMsg.className = "mb-2 text-right"; // Align user message to the right
+  userMsg.innerHTML = `<span class="bg-cyan-500/30 px-3 py-1 rounded-lg"><strong>You:</strong> ${message}</span>`;
   chatlog.appendChild(userMsg);
 
   input.value = "";
@@ -16,17 +16,29 @@ document.getElementById("sendBtn").addEventListener("click", async () => {
 
   try {
     const response = await fetch("/api/chat", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({ message: userMessage })
-});
-const data = await response.json();
-botMsg.innerHTML = `<strong>AI:</strong> ${data.reply || "No response from AI."}`;
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // FIX: Changed 'userMessage' to 'message'
+      body: JSON.stringify({ message: message }), 
+    });
 
+    if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // --- Display bot message ---
+    // FIX: Added logic to create and append the bot's response
+    const botMsg = document.createElement("div");
+    botMsg.className = "mb-2";
+    botMsg.innerHTML = `<strong>AI:</strong> ${data.reply || "No response from AI."}`;
+    chatlog.appendChild(botMsg);
 
     chatlog.scrollTop = chatlog.scrollHeight;
+
   } catch (err) {
     console.error("Error:", err);
     const errMsg = document.createElement("div");
