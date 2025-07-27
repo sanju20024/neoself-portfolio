@@ -136,6 +136,67 @@ body {
   transform: translateY(20px);
   transition: all 0.5s ease-out;
 }
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 320px;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  z-index: 9999;
+}
+
+.chat-header {
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  padding: 12px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-window {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+}
+
+#user-input {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  font-size: 14px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.user {
+  margin: 6px 0;
+  color: #00ffea;
+}
+
+.ai {
+  margin: 6px 0;
+  color: #ffffff;
+  font-style: italic;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 10px;
+}
 
 .card.show {
   opacity: 1;
