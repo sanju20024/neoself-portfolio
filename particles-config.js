@@ -1,52 +1,49 @@
 particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 60,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
+  particles: {
+    number: { value: 70, density: { enable: true, value_area: 800 } },
+    color: { value: "#00ffff" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
     },
-    "color": {
-      "value": "#ffffff"
+    opacity: {
+      value: 0.5,
+      random: false,
+      anim: { enable: false }
     },
-    "shape": {
-      "type": "circle"
+    size: {
+      value: 3,
+      random: true,
+      anim: { enable: false }
     },
-    "opacity": {
-      "value": 0.3,
-      "random": true
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#00ffff",
+      opacity: 0.4,
+      width: 1
     },
-    "size": {
-      "value": 4,
-      "random": true
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.2,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 2,
-      "direction": "none",
-      "out_mode": "out"
+    move: {
+      enable: true,
+      speed: 2,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false
     }
   },
-  "interactivity": {
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "repulse"
-      }
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" },
+      resize: true
     },
-    "modes": {
-      "repulse": {
-        "distance": 100
-      }
+    modes: {
+      grab: { distance: 140, line_linked: { opacity: 1 } },
+      push: { particles_nb: 4 }
     }
   },
-  "retina_detect": true
+  retina_detect: true
 });
