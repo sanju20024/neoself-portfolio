@@ -1,4 +1,4 @@
-/* Reset and Base */
+/* Reset and global styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,181 +7,116 @@
 }
 
 body {
-  background: linear-gradient(to right, #1c1c1c, #222);
-  color: #fff;
-  line-height: 1.6;
+  background: linear-gradient(135deg, #090e2c, #1f2b6c);
   min-height: 100vh;
-  overflow-x: hidden;
+  padding: 2rem;
+  color: white;
 }
 
-/* Glassy Container */
-.glass-container {
-  max-width: 1200px;
-  margin: 50px auto;
-  padding: 40px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 1.2s ease-in-out;
-}
-
-/* Sections */
-section {
-  margin-bottom: 80px;
-}
-
-h1, h2 {
-  color: #00ffe5;
-  margin-bottom: 20px;
-}
-
-p, li {
-  color: #e0e0e0;
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Header */
-header {
+.header {
   text-align: center;
-  padding: 40px 0;
+  margin-bottom: 2rem;
 }
 
-header h1 {
-  font-size: 2.5rem;
+.header h1 {
+  font-size: 3rem;
+  color: #7df9ff;
 }
 
-header p {
-  font-style: italic;
-  font-size: 1.1rem;
+.header p {
+  font-size: 1.2rem;
+  color: #ccc;
 }
 
-/* Project Grid */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+/* Intro card */
+.intro-card {
+  text-align: center;
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-.project {
-  background: rgba(255, 255, 255, 0.06);
-  padding: 20px;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: transform 0.3s ease;
+.intro-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-.project:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.09);
-}
-
-/* Resume Button */
-.resume-button {
+.resume-btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #00ffe5;
+  margin-top: 1rem;
+  background: #7df9ff;
   color: #000;
-  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s ease;
 }
 
-.resume-button:hover {
-  background: #00ccbd;
+.resume-btn:hover {
+  background: #00d4ff;
 }
 
-/* Chat Box */
-#chat-box {
+/* Chat UI */
+.chat-container {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 20px;
   width: 320px;
   max-height: 500px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  overflow: hidden;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-#chat-header {
-  background: #00ffe5;
-  padding: 12px 20px;
+.chat-header {
+  padding: 1rem;
   font-weight: bold;
-  color: #000;
+  background: rgba(255, 255, 255, 0.15);
   text-align: center;
 }
 
-#chat-messages {
-  flex: 1;
-  padding: 15px;
+.chat-box {
+  padding: 1rem;
   overflow-y: auto;
-  color: #fff;
-  font-size: 0.9rem;
+  flex: 1;
+  font-size: 0.95rem;
 }
 
-#chat-input {
+.chat-input {
+  display: flex;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
   border: none;
-  padding: 12px;
-  font-size: 1rem;
+  color: white;
   outline: none;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  .chat-message {
-  margin: 8px 0;
-  padding: 10px 14px;
-  border-radius: 12px;
-  max-width: 90%;
-  word-wrap: break-word;
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-.user-message {
-  align-self: flex-end;
-  background: #00ffe5;
+.chat-input button {
+  background: #7df9ff;
   color: #000;
-  margin-left: auto;
-  border-bottom-right-radius: 0;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.ai-message {
-  align-self: flex-start;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  margin-right: auto;
-  border-bottom-left-radius: 0;
-}
-
-.typing {
-  font-style: italic;
-  color: #ccc;
-  margin-top: 5px;
-}
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.chat-input button:hover {
+  background: #00d4ff;
 }
