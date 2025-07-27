@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AI-Powered Digital Twin Portfolio</title>
+  <title>AI Digital Twin Portfolio</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -14,135 +14,120 @@
   <style>
     body {
       margin: 0;
+      background: #0f172a; /* Dark slate background */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
     .glass-box {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 1rem;
       padding: 1.5rem;
       color: #fff;
     }
-
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
   </style>
 </head>
-<body class="relative h-screen overflow-x-hidden text-white">
+<body class="relative text-white overflow-x-hidden min-h-screen">
 
-  <!-- Animated Particle Background -->
+  <!-- Particle Background -->
   <div id="particles-js"></div>
 
   <!-- Header -->
-  <header class="p-6 text-center">
-    <h1 class="text-4xl font-bold tracking-wider">🚀 AI-Powered Digital Twin Portfolio</h1>
-    <p class="text-lg text-cyan-300 mt-2">Your futuristic portfolio, now intelligent.</p>
+  <header class="text-center p-6">
+    <h1 class="text-4xl font-bold text-cyan-400">🚀 AI-Powered Digital Twin Portfolio</h1>
+    <p class="text-lg text-white mt-2">Crafted for the future. Powered by AI.</p>
   </header>
 
-  <!-- Main Content -->
-  <main class="flex flex-col items-center justify-center px-4 py-10 space-y-6">
-    <!-- About Me Section -->
+  <!-- Content -->
+  <main class="flex flex-col items-center px-4 py-8 space-y-8">
+    <!-- About -->
     <section class="w-full max-w-4xl glass-box">
-      <h2 class="text-2xl font-semibold mb-4">👤 About Me</h2>
-      <p>Hello, I'm Sanjay Thadaka. I'm a passionate web developer and aspiring AI engineer building futuristic digital solutions. This AI assistant is your gateway to learning more about me and my projects.</p>
+      <h2 class="text-2xl font-semibold mb-2">👤 About Me</h2>
+      <p>Hi! I'm Sanjay Thadaka — a passionate web developer and future AI engineer. Explore my AI-powered portfolio to learn more about my skills and projects.</p>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section class="w-full max-w-4xl glass-box">
-      <h2 class="text-2xl font-semibold mb-4">💼 Projects</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Real-Time Weather Dashboard with Glassy Design</li>
-        <li>Deepfake Detection Using AI – Seminar Presentation</li>
-        <li>Advanced Neural Network for Loan Fraud Detection</li>
-        <li>18+ Responsive Static Websites with HTML/CSS/Bootstrap</li>
+      <h2 class="text-2xl font-semibold mb-2">💼 Projects</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <li>Real-Time Weather Dashboard</li>
+        <li>Deepfake Detection using AI</li>
+        <li>Loan Fraud Detection with KNN + Deep Learning</li>
+        <li>18+ Static Web Projects (HTML, CSS, Bootstrap)</li>
       </ul>
     </section>
 
-    <!-- AI Chat Assistant -->
+    <!-- AI Chat -->
     <section class="w-full max-w-4xl glass-box">
-      <h2 class="text-2xl font-semibold mb-4">🤖 AI Chat Assistant</h2>
+      <h2 class="text-2xl font-semibold mb-2">🤖 AI Chat Assistant</h2>
       <div class="space-y-4">
-        <div id="chatlog" class="h-48 overflow-y-auto bg-white/10 p-3 rounded-lg backdrop-blur-md border border-white/20 text-sm"></div>
+        <div id="chatlog" class="h-48 overflow-y-auto bg-white/10 p-3 rounded-md text-sm text-white"></div>
         <div class="flex space-x-2">
-          <input type="text" id="userInput" placeholder="Ask me anything..." class="flex-1 px-3 py-2 rounded-md bg-white/10 text-white placeholder-white/70 backdrop-blur-md border border-white/20 outline-none focus:ring-2 focus:ring-cyan-400" />
-          <button id="sendBtn" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-md transition-all">Send</button>
+          <input type="text" id="userInput" placeholder="Ask me anything..." class="flex-1 px-3 py-2 rounded-md bg-gray-800 text-white placeholder-white border border-white/30 outline-none focus:ring-2 focus:ring-cyan-400" />
+          <button id="sendBtn" class="px-4 py-2 bg-cyan-500 hover:bg-cyan-600 text-white rounded-md">Send</button>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="absolute bottom-0 w-full text-center text-sm p-3 text-white/70">
-    &copy; 2025 Sanjay Thadaka. Built with ❤️ and JavaScript.
+  <footer class="text-center text-sm text-white/60 py-4">
+    &copy; 2025 Sanjay Thadaka. Built with ❤️ and AI.
   </footer>
 
-  <!-- Particle.js Configuration Script -->
+  <!-- Particle JS Config -->
   <script>
     particlesJS("particles-js", {
-      "particles": {
-        "number": {
-          "value": 70,
-          "density": {
-            "enable": true,
-            "value_area": 800
+      particles: {
+        number: {
+          value: 80,
+          density: {
+            enable: true,
+            value_area: 800
           }
         },
-        "color": {
-          "value": "#00FFFF"
+        color: { value: "#00ffff" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.3
         },
-        "shape": {
-          "type": "circle"
+        size: {
+          value: 3,
+          random: true
         },
-        "opacity": {
-          "value": 0.5
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00ffff",
+          opacity: 0.2,
+          width: 1
         },
-        "size": {
-          "value": 3,
-          "random": true
-        },
-        "line_linked": {
-          "enable": true,
-          "distance": 150,
-          "color": "#00FFFF",
-          "opacity": 0.4,
-          "width": 1
-        },
-        "move": {
-          "enable": true,
-          "speed": 3,
-          "direction": "none",
-          "out_mode": "out"
+        move: {
+          enable: true,
+          speed: 2,
+          out_mode: "out"
         }
       },
-      "interactivity": {
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          }
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
         },
-        "modes": {
-          "repulse": {
-            "distance": 100
-          },
-          "push": {
-            "particles_nb": 4
-          }
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
         }
       },
-      "retina_detect": true
+      retina_detect: true
     });
   </script>
-
 </body>
 </html>
