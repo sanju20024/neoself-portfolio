@@ -1,22 +1,26 @@
-const chatBox = document.getElementById("chat-box");
-const userInput = document.getElementById("user-input");
+// Load Particles.js
+particlesJS.load('particles-js', 'particles.json', function () {
+  console.log('particles.js config loaded');
+});
 
+// Chat Assistant Logic
 function sendMessage() {
-  const message = userInput.value.trim();
-  if (!message) return;
+  const input = document.getElementById('userInput');
+  const chatLog = document.getElementById('chatLog');
+  const message = input.value.trim();
 
-  // Display user message
-  const userDiv = document.createElement("div");
-  userDiv.innerHTML = `<strong>You:</strong> ${message}`;
-  chatBox.appendChild(userDiv);
+  if (message !== '') {
+    // Add user's message
+    const userMsg = document.createElement('div');
+    userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+    chatLog.appendChild(userMsg);
 
-  // Dummy AI response
-  const aiDiv = document.createElement("div");
-  setTimeout(() => {
-    aiDiv.innerHTML = `<strong>NeoSelf:</strong> That's interesting! I'm still learning. 😊`;
-    chatBox.appendChild(aiDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
-  }, 700);
+    // Add simple bot reply (replace this with actual AI logic if needed)
+    const botReply = document.createElement('div');
+    botReply.innerHTML = `<strong>AI:</strong> Hello! I'm still learning. Stay tuned!`;
+    setTimeout(() => chatLog.appendChild(botReply), 500);
 
-  userInput.value = "";
+    input.value = '';
+    chatLog.scrollTop = chatLog.scrollHeight;
+  }
 }
