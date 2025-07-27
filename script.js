@@ -1,3 +1,4 @@
+
 // Select elements
 const chatBox = document.getElementById("chat-box");
 const chatMessages = document.getElementById("chat-messages");
