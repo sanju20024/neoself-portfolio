@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NeoSelf - AI Twin Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <h1>Hello, I’m NeoSelf 🧠</h1>
+      <p>Your AI-powered digital twin assistant.</p>
+<a href="Sanjay_Kumar_Resume_.pdf" download class="btn btn-primary" style="margin-top: 15px;">
+    📄 Download My Resume
+</a>
+
+    </section>
+
+    <section class="info-panels">
+      <div class="resume-panel">
+        <h2>Resume Highlights</h2>
+        <div id="resume-tracker">Loading...</div>
+      </div>
+<div class="github-panel">
+    <h2>🔗 GitHub Tracker</h2>
+    <p><strong>Name:</strong> <span id="github-name">Loading...</span></p>
+    <p><strong>Bio:</strong> <span id="github-bio">Loading...</span></p>
+    <p><strong id="github-followers">Followers: ...</strong></p>
+    <a id="github-link" href="#" target="_blank">Visit GitHub Profile</a>
+</div>
+<!-- Resume Viewer Panel -->
+<div class="resume-viewer">
+  <h2>📄 My Resume</h2>
+  <iframe src="Sanjay_Kumar_Resume_.pdf" width="100%" height="600px" style="border-radius: 12px; border: none;"></iframe>
+</div>
+
+
+
+
+      <div class="github-panel">
+        <h2>GitHub Stats</h2>
+        <div id="github-tracker">Loading...</div>
+      </div>
+    </section>
+
+    <section class="chat-panel">
+      <h2>Talk to NeoSelf</h2>
+      <div id="chat-box"></div>
+      <input type="text" id="user-input" placeholder="Ask something..." />
+      <button onclick="handleChat()">Send</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
